@@ -70,7 +70,8 @@ class Student
 
   def self.find_by_name(nombre)
     sql = <<-SQL
-    SELECT * WHERE name = ?
+    SELECT * FROM students
+    WHERE name = ?
     LIMIT 1
     SQL
 

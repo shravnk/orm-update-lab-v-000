@@ -34,8 +34,8 @@ class Student
 
   def update
     sql = <<-SQL
-      UPDATE students(name, grade)
-      VALUES (?, ?)
+      UPDATE students
+      SET name = ?, grade = ?
       WHERE id = ?
     SQL
 
@@ -62,7 +62,5 @@ class Student
     student.save
     student
   end
-
-
 
 end

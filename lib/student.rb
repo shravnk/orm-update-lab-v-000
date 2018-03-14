@@ -34,7 +34,7 @@ class Student
 
   def save
     if self.id
-      break
+      return self.id
     else
       sql = <<-SQL
       INSERT INTO students (name, grade)

@@ -32,7 +32,7 @@ class Student
     DB[:conn].execute(sql)
   end
 
-  def self.update
+  def update
     sql = <<-SQL
       UPDATE students(name, grade)
       VALUES (?, ?)

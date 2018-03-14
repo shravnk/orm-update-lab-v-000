@@ -68,4 +68,14 @@ class Student
     student
   end
 
+  def self.find_by_name(nombre)
+    sql = <<-SQL
+    SELECT * WHERE name = ?
+    LIMIT 1
+    SQL
+
+    row = DB[:conn].execute(sql, nombre).first
+    self.new_from_db(row)
+  end
+
 end
